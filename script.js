@@ -27,17 +27,19 @@ function showMovies(movies) {
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
 
+    let voteAvg = vote_average.toFixed(1);
+
     movieEl.innerHTML = `
             <img src="${IMG_PATH + poster_path}" alt="${title}">
             <div class="movie-info">
-          <h3>${title}</h3>
-          <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+              <h3>${title}</h3>
+              <span class="${getClassByRate(vote_average)}">${voteAvg}</span>
             </div>
             <div class="overview">
-          <h3>Overview</h3>
-          ${overview}
-        </div>
-        `;
+              <h3>Overview</h3>
+              ${overview}
+            </div>
+            `;
     main.appendChild(movieEl);
   });
 }
